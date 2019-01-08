@@ -1,0 +1,19 @@
+---
+service:
+  name: 12factorapp
+  count: 1
+  repository: 315266843309.dkr.ecr.us-east-1.amazonaws.com/wm/12factorapp #Doesn't actually exist
+  version: build-param
+  resources:
+    cpu: 1000
+    memory: 1024
+    network:
+      mbits: 10
+  env:
+    SPRING_DATSOURCE_URL: jdbc:mysql://dev-pb-middleware-rds-57.ct9mm4vv5wzc.us-east-1.rds.amazonaws.com:3306/wm_mw?useSSL=false
+    SPRING_DATASOURCE_HIKARI_CONNECTION_TIMEOUT: 3000
+    SPRING_DATASOURCE_HIKARI_MAXIMUM_POOL_SIZE: 20
+    COOL_FEATURE_URL: http://some-app-prod:8080
+  secret:
+    SPRING_DATASOURCE_USERNAME: database/spring_datasource/userId
+    SPRING_DATASOURCE_PASSWORD: database/spring_datasource/password

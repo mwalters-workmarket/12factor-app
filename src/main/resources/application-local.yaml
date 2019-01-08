@@ -1,0 +1,16 @@
+# Place any local environment specific property values here so that a developer can deploy locally
+# by including "-Dspring.profiles.active=local" when starting the JAR from command line
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: twelve
+    password: factor
+    hikari:
+      connectionTimeout: 5000
+      maximumPoolSize: 5   # small pool for local development
+
+cool:
+  feature:
+    url: http://localhost:8080/otherapp
